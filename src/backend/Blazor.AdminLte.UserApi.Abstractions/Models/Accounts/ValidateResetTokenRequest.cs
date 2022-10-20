@@ -1,9 +1,10 @@
-namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts;
-
 using System.ComponentModel.DataAnnotations;
 
-public class ValidateResetTokenRequest
+namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts
 {
-    [Required]
-    public string Token { get; set; }
+    public class ValidateResetTokenRequest
+    {
+        [Required] 
+        public string Token { get; set; }
+    }
 }

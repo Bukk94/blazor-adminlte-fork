@@ -1,17 +1,18 @@
-namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts;
-
 using System.ComponentModel.DataAnnotations;
 
-public class ResetPasswordRequest
+namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts
 {
-    [Required]
-    public string Token { get; set; }
+    public class ResetPasswordRequest
+    {
+        [Required] 
+        public string Token { get; set; }
 
-    [Required]
-    [MinLength(6)]
-    public string Password { get; set; }
+        [Required] 
+        [MinLength(6)] 
+        public string Password { get; set; }
 
-    [Required]
-    [Compare("Password")]
-    public string ConfirmPassword { get; set; }
+        [Required] 
+        [Compare("Password")] 
+        public string ConfirmPassword { get; set; }
+    }
 }

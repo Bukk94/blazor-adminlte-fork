@@ -1,10 +1,11 @@
-﻿namespace Blazor.AdminLte.Security.Abstractions.Authorization;
+﻿using Blazor.AdminLte.Security.Abstractions.Entities;
 
-using Blazor.AdminLte.Security.Abstractions.Entities;
-
-public interface IJwtUtils
+namespace Blazor.AdminLte.Security.Abstractions.Authorization
 {
-    public string GenerateJwtToken(Account account);
-    public int? ValidateJwtToken(string token);
-    public RefreshToken GenerateRefreshToken(string ipAddress);
+    public interface IJwtUtils
+    {
+        public string GenerateJwtToken(Account account);
+        public int? ValidateJwtToken(string token);
+        public RefreshToken GenerateRefreshToken(string ipAddress);
+    }
 }

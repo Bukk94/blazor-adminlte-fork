@@ -1,10 +1,11 @@
-namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts;
-
 using System.ComponentModel.DataAnnotations;
 
-public class ForgotPasswordRequest
+namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts
 {
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; }
+    public class ForgotPasswordRequest
+    {
+        [Required] 
+        [EmailAddress] 
+        public string Email { get; set; }
+    }
 }

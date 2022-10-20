@@ -1,5 +1,9 @@
-namespace Blazor.AdminLte.Security.Abstractions.Authorization;
+using System;
 
-[AttributeUsage(AttributeTargets.Method)]
-public class AllowAnonymousAttribute : Attribute
-{ }
+namespace Blazor.AdminLte.Security.Abstractions.Authorization
+{
+    [AttributeUsage(AttributeTargets.Method)]
+    public class AllowAnonymousAttribute : Attribute
+    {
+    }
+}
