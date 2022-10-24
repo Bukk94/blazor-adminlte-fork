@@ -24,7 +24,7 @@
                             </div>
                         @if (captchaGenerateResponse != null)
                         {
-                            <img src="@captchaGenerateResponse.Image" />
+                            <img src="@captchaGenerateResponse?.Image" />
                             <Input @bind-Value="captchaKey" />
                         }
                             <div class="col-4">
@@ -79,7 +79,7 @@
     {
         if (!firstRender)
             return;
-        captchaGenerateResponse = await UserApiClient.CaptchaAsync();
+        //captchaGenerateResponse = await UserApiClient.CaptchaAsync();
         StateHasChanged();
     }
 
