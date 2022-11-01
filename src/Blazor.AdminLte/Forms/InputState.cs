@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace Blazor.AdminLte
 {
@@ -16,6 +18,10 @@ namespace Blazor.AdminLte
         public string Placeholder { get; set; }
         public string Type { get; set; }
         public string Icon { get; set; }
+        public bool CustomizedCss { get; set; }
+        public bool IsIconClickable { get; set; } = false;
+        public EventCallback<MouseEventArgs> OnIconClickAction { get; set; }
+        
         public Color BorderColor
         {
             get { return _borderColor; }

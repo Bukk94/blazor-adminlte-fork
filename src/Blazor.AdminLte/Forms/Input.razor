@@ -3,13 +3,22 @@
 {
     <label for="@Value.Identifier">@((MarkupString)Value.Label)</label>
 }
-<div class="input-group mb-3">
+<div class="@Styles">
     <input class="form-control @borderColor" id="@Value.Identifier" placeholder="@Value.Placeholder" value="@Value.Value" @onchange="DoChange" type="@Value.Type">
 
     @if (!string.IsNullOrEmpty(Value.Icon)) {
         <div class="input-group-append">
-            <div class="@iconBgColor input-group-text">
-                <span class="@Value.Icon"></span>
+            <div class="@iconBgColor input-group-text @(Value.CustomizedCss ? "input-button-override" : "")">
+                @if (Value.IsIconClickable)
+                {
+                    <button class="btn btn-secondary btn-sm" @onclick="Value.OnIconClickAction">
+                        <span class="@Value.Icon"></span>
+                    </button>
+                }
+                else
+                {
+                    <span class="@Value.Icon"></span>
+                }
             </div>
         </div>
     }
@@ -21,6 +30,11 @@
 </div>
 
 @code {
-    private string borderColor => $"border-{@Value.BorderColor.GetDescription<StyleAttribute>()}";
-    private string iconBgColor => $"bg-{@Value.IconBgColor.GetDescription<StyleAttribute>()}";
+    private string borderColor => Value.BorderColor == Color.Default 
+        ? ""
+        : $"border-{Value.BorderColor.GetDescription<StyleAttribute>()}";
+    
+    private string iconBgColor => Value.IconBgColor == Color.Default 
+        ? "" 
+        : $"bg-{Value.IconBgColor.GetDescription<StyleAttribute>()}";
 }

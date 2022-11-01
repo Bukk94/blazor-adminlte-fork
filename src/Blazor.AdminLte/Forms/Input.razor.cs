@@ -4,8 +4,13 @@ namespace Blazor.AdminLte
 {
     public partial class Input
     {
+        private const string DefaultStyles = "input-group mb-3";
+
         [Parameter]
         public InputState Value { get; set; }
+
+        [Parameter]
+        public string Styles { get; set; } = DefaultStyles;
 
         [Parameter]
         public EventCallback<InputState> ValueChanged { get; set; }

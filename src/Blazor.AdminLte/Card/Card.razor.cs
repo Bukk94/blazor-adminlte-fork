@@ -21,8 +21,15 @@ namespace Blazor.AdminLte
         [Parameter]
         public CardStyle[] Styles { get; set; } = new CardStyle[] { };
 
+        [Parameter] 
+        public string MainCssCustomization { get; set; }
+        
         [Parameter]
         public RenderFragment Body { get; set; }
+
+        [Parameter] 
+        public string BodyCss { get; set; } = "card-body";
+        
         [Parameter]
         public RenderFragment Header { get; set; }
         [Parameter]
@@ -44,6 +51,11 @@ namespace Blazor.AdminLte
         {
             var attributes = new Dictionary<string, object>();
             attributes["class"] = "card";
+            if (!string.IsNullOrWhiteSpace(MainCssCustomization))
+            {
+                attributes["class"] = $"{attributes["class"]} {MainCssCustomization}";
+            }
+            
             if (HeaderBackgroundColor != Color.Default)
             {
                 attributes["class"] = $"{attributes["class"]} card-{DisplayHeaderBackgroundColor}";
