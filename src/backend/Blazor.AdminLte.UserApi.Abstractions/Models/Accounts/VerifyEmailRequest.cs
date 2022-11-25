@@ -1,10 +1,9 @@
+namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts;
+
 using System.ComponentModel.DataAnnotations;
 
-namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts
+public class VerifyEmailRequest
 {
-    public class VerifyEmailRequest
-    {
-        [Required] 
-        public string Token { get; set; }
-    }
+    [Required]
+    public string Token { get; set; }
 }

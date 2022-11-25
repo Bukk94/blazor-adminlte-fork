@@ -1,8 +1,7 @@
-namespace Blazor.AdminLte.Security.Abstractions.Entities
+namespace Blazor.AdminLte.Security.Abstractions.Entities;
+
+public enum Role
 {
-    public enum Role
-    {
-        Admin,
-        User
-    }
+    Admin,
+    User
 }

@@ -1,7 +1,6 @@
-namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts
+namespace Blazor.AdminLte.Security.Abstractions.Models.Accounts;
+
+public class RevokeTokenRequest
 {
-    public class RevokeTokenRequest
-    {
-        public string Token { get; set; }
-    }
+    public string Token { get; set; }
 }
