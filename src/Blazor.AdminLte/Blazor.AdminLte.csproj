@@ -13,8 +13,8 @@
     <RepositoryUrl>https://github.com/sjefvanleeuwen/blazor-adminlte</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <PackageTags></PackageTags>
-    <AssemblyVersion>1.0.0.4</AssemblyVersion>
-    <FileVersion>1.0.0.4</FileVersion>
+    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <FileVersion>1.0.0.5</FileVersion>
     <Title>ADMINLTE for Blazor</Title>
     <Description>ADMINLTE for Blazor is a collection of reusable components, with which you can easily develop digital services as a designer or developer. Think of buttons, form elements and page templates. This project adapts ADMINLTE 3 so the components can be used from dotnet core Blazor.</Description>
     <NeutralLanguage></NeutralLanguage>
