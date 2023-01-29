@@ -1,29 +1,35 @@
-﻿@content
+﻿@Content
 
 @code {
     [Parameter]
-    public RenderFragment content { get; set; }
+    public RenderFragment Content { get; set; }
 
     public bool OverrideParentContent { get; set; }
 
+    [Parameter]
+    public Action OnContentSet { get; set; }
+
+    public void ResetContent()
+    {
+        Content = null;
+        OverrideParentContent = false;
+        OnContentSet?.Invoke();
+    }
+    
     public string SetContent(RenderFragment ctx, bool overrideParentContent = false)
     {
         if (ctx == null)
         {
-            content = null;
+            Content = null;
         }
         else
         {
-            content = (RenderFragment)ctx.Clone();
+            Content = (RenderFragment)ctx.Clone();
         }
 
-
         OverrideParentContent = overrideParentContent;
+        OnContentSet?.Invoke();
+            
         return null;
-    }
-
-    public RenderFragment GetContent()
-    {
-        return content;
     }
 }

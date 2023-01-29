@@ -1,8 +1,20 @@
 ﻿@namespace Blazor.AdminLte
-<a href="#" class="dropdown-item">
+<a href="@Link" class="dropdown-item" @onclick="MenuItemClickAction">
     @ChildContent
 </a>
+
 @code {
     [Parameter]
+    public string Link { get; set; } = "javascript:void(0);";
+    
+    [Parameter]
     public RenderFragment ChildContent { get; set; }
+    
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+    
+    private void MenuItemClickAction(MouseEventArgs args)
+    {
+        OnClick.InvokeAsync(args);
+    }
 }
